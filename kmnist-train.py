@@ -1,10 +1,8 @@
 import os
 import glob
-import umap
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
-import seaborn as sns
 import itertools
 from os import listdir, makedirs, getcwd, remove
 from os.path import isfile, join, abspath, exists, isdir, expanduser
