@@ -53,7 +53,7 @@ print(f"Number of test samples: {len(kmnist_test_images)} where each sample is o
 # A bunch of variables. The variable have the same value as given in the keras example
 batch_size = 128
 num_classes = 10
-epochs = 12
+epochs = 1
 
 # input image dimensions
 img_rows, img_cols = 28, 28
@@ -97,7 +97,13 @@ model.fit(x_train, y_train,
           verbose=1,
           validation_data=(x_test, y_test))
 
-model.save('model.h5')
+outputs_dir = os.getenv('VH_OUTPUTS_DIR', './')
+output_file = os.path.realpath(os.path.join(outputs_dir, 'my_model.h5'))
+if not os.path.isdir(outputs_dir):
+    os.makedirs(outputs_dir)
+
+print('Saving trained model to %s' % output_file)
+model.save(output_file)
 
 # Check the test loss and test accuracy 
 score = model.evaluate(x_test, y_test, verbose=0)
