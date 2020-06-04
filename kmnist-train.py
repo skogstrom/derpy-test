@@ -1,5 +1,3 @@
-pip install imgaug
-
 import os
 import glob
 import numpy as np # linear algebra
@@ -26,8 +24,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.manifold import TSNE
 from skimage.io import imread, imshow
 from skimage.transform import resize
-import imgaug as ia
-from imgaug import augmenters as iaa
 from keras import backend as K
 import tensorflow as tf
 from collections import defaultdict, Counter
