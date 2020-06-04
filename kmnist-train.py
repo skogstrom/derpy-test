@@ -1,3 +1,5 @@
+pip install imgaug
+
 import os
 import glob
 import numpy as np # linear algebra
