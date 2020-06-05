@@ -97,13 +97,7 @@ model.fit(x_train, y_train,
           verbose=1,
           validation_data=(x_test, y_test))
 
-outputs_dir = os.getenv('VH_OUTPUTS_DIR', './')
-output_file = os.path.realpath(os.path.join(outputs_dir, 'my_model.h5'))
-if not os.path.isdir(outputs_dir):
-    os.makedirs(outputs_dir)
-
-print('Saving trained model to %s' % output_file)
-model.save(output_file)
+model.save("/valohai/outputs/model.h5")
 
 # Check the test loss and test accuracy 
 score = model.evaluate(x_test, y_test, verbose=0)
